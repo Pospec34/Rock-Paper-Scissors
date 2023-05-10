@@ -1,17 +1,39 @@
 function getComputerChoice(){
     let randomNumber = Math.floor(Math.random() * 3) + 1;
-    const rock = 1;
-    const paper = 2;
-    const scissors = 3;
     console.log(randomNumber);
-    if (randomNumber === 1){
+    return randomNumber;
+    /*if (randomNumber === 1){
         return "Rock"
     }
     else if (randomNumber === 2)
     {
         return "Paper"
     } else
-        return "Scissors"
+        return "Scissors"*/
 }
 
-console.log(getComputerChoice());
+function singleRound(playerSelection, aiSelection){
+    if (playerSelection === aiSelection){
+        return "Draw";
+    } else if
+        (playerSelection === 1 && aiSelection === 2){
+            return "You lose, paper beats rock"
+    } else if 
+        (playerSelection === 1 && aiSelection === 3){
+            return "You win, rock beats scissors"
+    } else if
+        (playerSelection === 2 && aiSelection === 1){
+            return "You win, paper beats rock"
+    }   else if
+        (playerSelection === 2 && aiSelection === 3){
+            return "You lose, scissors beat paper"
+    }   else if 
+        (playerSelection === 3 && aiSelection === 1) {
+            return "You lose, rock beats scissors"
+    }   else {
+        return "You win, scissors beat paper"
+    }
+ }
+
+
+console.log(singleRound(2, getComputerChoice()))
