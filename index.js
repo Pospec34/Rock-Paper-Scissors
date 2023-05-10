@@ -1,7 +1,5 @@
 playerChoice = prompt("Hej");
 playerChoice = parseInt(playerChoice);
-console.log(playerChoice);
-
 
 function getComputerChoice(){
     let randomNumber = Math.floor(Math.random() * 3) + 1;
@@ -33,10 +31,13 @@ function singleRound(playerSelection, aiSelection){
         (playerSelection === 2 && aiSelection === 3){
             return "You lose, scissors beat paper"
     }   else if 
-        (playerSelection === 3 && aiSelection === 1) {
+        (playerSelection === 3 && aiSelection === 1){
             return "You lose, rock beats scissors"
+        }   else if 
+        (playerSelection === 3 && aiSelection === 2){
+            return "You win, scissors beat paper"
     }   else {
-        return "You win, scissors beat paper"
+        return "chyba"
     }
  }
 
