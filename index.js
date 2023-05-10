@@ -1,3 +1,8 @@
+playerChoice = prompt("Hej");
+playerChoice = parseInt(playerChoice);
+console.log(playerChoice);
+
+
 function getComputerChoice(){
     let randomNumber = Math.floor(Math.random() * 3) + 1;
     console.log(randomNumber);
@@ -36,4 +41,4 @@ function singleRound(playerSelection, aiSelection){
  }
 
 
-console.log(singleRound(2, getComputerChoice()))
+console.log(singleRound(playerChoice, getComputerChoice()))
