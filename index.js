@@ -1,10 +1,16 @@
-playerChoice = prompt("Hej");
-playerChoice = parseInt(playerChoice);
+playerChoice = prompt("Hey, let's try beating PC at Rock, paper, scissors! Choose one.");
+playerChoice = playerChoice.toLowerCase();
 
 function getComputerChoice(){
     let randomNumber = Math.floor(Math.random() * 3) + 1;
-    console.log(randomNumber);
-    return randomNumber;
+    if (randomNumber === 1){
+        return "rock"
+    } else if 
+        (randomNumber === 2){
+            return "paper"
+    } else {
+        return "scissors"
+    } 
     /*if (randomNumber === 1){
         return "Rock"
     }
@@ -15,31 +21,34 @@ function getComputerChoice(){
         return "Scissors"*/
 }
 
-function singleRound(playerSelection, aiSelection){
+function playRound(playerSelection, aiSelection){
     if (playerSelection === aiSelection){
         return "Draw";
     } else if
-        (playerSelection === 1 && aiSelection === 2){
+        (playerSelection === "rock" && aiSelection === "paper"){
             return "You lose, paper beats rock"
     } else if 
-        (playerSelection === 1 && aiSelection === 3){
+        (playerSelection === "rock" && aiSelection === "scissors"){
             return "You win, rock beats scissors"
     } else if
-        (playerSelection === 2 && aiSelection === 1){
+        (playerSelection === "paper" && aiSelection === "rock"){
             return "You win, paper beats rock"
     }   else if
-        (playerSelection === 2 && aiSelection === 3){
+        (playerSelection === "paper" && aiSelection === "scissors"){
             return "You lose, scissors beat paper"
     }   else if 
-        (playerSelection === 3 && aiSelection === 1){
+        (playerSelection === "scissors" && aiSelection === "rock"){
             return "You lose, rock beats scissors"
         }   else if 
-        (playerSelection === 3 && aiSelection === 2){
+        (playerSelection === "scissors" && aiSelection === "paper"){
             return "You win, scissors beat paper"
     }   else {
         return "chyba"
     }
  }
+ const computerSelection = getComputerChoice();
+
+console.log(playRound(playerChoice, computerSelection))
 
 
-console.log(singleRound(playerChoice, getComputerChoice()))
+console.log(computerSelection);
